@@ -6,12 +6,25 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "selector",
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      container: {
+        center: true,
+        padding: {
+          default: "2rem",
+          sm: "1rem",
+        },
+      },
+      animation: {
+        message: "message 1s ease-in",
+      },
+
+      keyframes: {
+        message: {
+          "0%": { transform: "translateX(300px)" },
+          "100%": { transform: "translateX(0)" },
+        },
       },
     },
   },
