@@ -6,20 +6,19 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode: "selector",
+  darkMode: "class",
   theme: {
     extend: {
       container: {
         center: true,
         padding: {
-          default: "2rem",
+          DEFAULT: "2rem",
           sm: "1rem",
         },
       },
       animation: {
         message: "message 1s ease-in",
       },
-
       keyframes: {
         message: {
           "0%": { transform: "translateX(300px)" },
@@ -30,4 +29,5 @@ const config: Config = {
   },
   plugins: [],
 };
+
 export default config;

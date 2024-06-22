@@ -5,7 +5,7 @@ const page = async ({ params }: { params: { blog: string } }) => {
     `https://jsonplaceholder.typicode.com/posts/${params.blog}`
   );
   if (!res.ok) {
-    throw new Error("Failed to fetch posts");
+    throw new Error("Failed to fetch post");
   }
 
   const blog = await res.json();
