@@ -1,6 +1,5 @@
 import React from "react";
 import BlogList from "@/Components/BlogList";
-import ScrollTop from "@/Components/ScrollTop";
 
 interface Post {
   id: number;
@@ -21,7 +20,6 @@ const Home = async () => {
 
   return (
     <main className="container max-sm:w-[95%] py-8 flex justify-center items-center ">
-      <ScrollTop />
       <BlogList posts={posts} />
     </main>
   );
