@@ -1,7 +1,6 @@
 "use client";
 
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import React from "react";
 import { TiThMenuOutline } from "react-icons/ti";
@@ -21,9 +20,13 @@ const NavBar = () => {
     setIsDarkMode(!isDarkMode);
   };
 
-  isDarkMode
-    ? document.querySelector("html")?.classList.add("dark")
-    : document.querySelector("html")?.classList.remove("dark");
+  useEffect(() => {
+    if (isDarkMode) {
+      document.querySelector("html")?.classList.add("dark");
+    } else {
+      document.querySelector("html")?.classList.remove("dark");
+    }
+  }, [isDarkMode]);
 
   return (
     <nav className="container py-4 px-8 flex justify-between items-center border-b border-slate-900 dark:border-slate-200 max-sm:relative">
@@ -54,7 +57,7 @@ const NavBar = () => {
 
       <div className="flex items-center gap-6">
         <div
-          className="w-12 h-6 rounded-full bg-slate-900 dark:bg-white shadow-inner cursor-pointer  flex items-center"
+          className="w-12 h-6 rounded-full bg-slate-900 dark:bg-white shadow-inner cursor-pointer flex items-center"
           onClick={toggleDarkMode}
         >
           <div
