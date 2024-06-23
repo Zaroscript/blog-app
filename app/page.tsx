@@ -25,7 +25,7 @@ export const getServerSideProps = async () => {
     return { props: { posts } };
   } catch (error) {
     console.error("Error fetching posts:", error);
-    return { props: { posts: [] } }; // Return empty array or handle error as needed
+    return { props: { posts: [] } }; 
   }
 };
 
