@@ -39,16 +39,16 @@ const NavBar = () => {
           href="/"
           className={`max-sm:bg-slate-200 max-sm:dark:bg-slate-900 max-sm:dark:hover:bg-slate-800 max-sm:w-full max-sm:p-4 max-sm:text-center max-sm:block shadow-md max-sm:hover:bg-slate-100 transition-all duration-500 
             max-sm:rounded-sm text-lg sm:underline-effect sm:shadow-none sm:p-0 sm:ml-0 sm:opacity-100
-            ${!isOpen && "ml-96 opacity-0"}`}
+            ${!isOpen && "opacity-0"}`}
           onClick={handleNavState}
         >
           Home
         </Link>
         <Link
           href="/createPost"
-          className={`max-sm:bg-slate-200 max-sm:dark:bg-slate-900 max-sm:dark:hover:bg-slate-800 max-sm:w-full max-sm:p-4 max-sm:text-center max-sm:block shadow-md max-sm:hover:bg-slate-100 transition-all duration-500 delay-150
+          className={` max-sm:bg-slate-200 max-sm:dark:bg-slate-900 max-sm:dark:hover:bg-slate-800 max-sm:w-full max-sm:p-4 max-sm:text-center max-sm:block shadow-md max-sm:hover:bg-slate-100 transition-all duration-500 delay-150
             max-sm:rounded-sm text-lg sm:underline-effect sm:shadow-none sm:p-0 sm:ml-0 sm:opacity-100
-            ${!isOpen && "ml-96 opacity-0"}`}
+            ${!isOpen && "opacity-0"}`}
           onClick={handleNavState}
         >
           CreatePost
