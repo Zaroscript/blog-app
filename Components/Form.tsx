@@ -138,7 +138,7 @@ const Form: React.FC = () => {
 
       {message && (
         <p
-          className={`absolute z-50 top-4 right-10 w-fit p-4 rounded-sm animate-message ${
+          className={`absolute z-50 top-20 right-5 w-fit p-4 rounded-sm animate-message ${
             isSuccess
               ? "bg-green-200 text-green-800"
               : "bg-red-200 text-red-800"
