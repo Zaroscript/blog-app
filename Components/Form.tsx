@@ -88,66 +88,72 @@ const Form: React.FC = () => {
       const timer = setTimeout(() => {
         setMessage("");
         setIsSuccess(null);
-      }, 5000); // 3 seconds
+      }, 5000); // 5 seconds
 
       return () => clearTimeout(timer);
     }
   }, [message]);
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="mt-24 sm:mt-28 flex flex-col rounded-lg p-4 w-2/3 mx-auto border border-slate-200 max-sm:w-[90%]"
-    >
-      <h2 className="font-bold text-2xl md:text-4xl text-center">Create a new post</h2>
+    <div className="relative">
+      <form
+        onSubmit={handleSubmit}
+        className="mt-24 sm:mt-28 flex flex-col rounded-lg p-4 w-2/3 mx-auto border border-slate-200 max-sm:w-[90%]"
+      >
+        <h2 className="font-bold text-2xl md:text-4xl text-center">
+          Create a new post
+        </h2>
 
-      <div className="mt-4">
-        <input
-          placeholder="Post title"
-          className="w-full bg-slate-200 rounded-md focus:border-slate-900 px-2 py-1 dark:text-black"
-          type="text"
-          name="title"
-          value={formData.title}
-          onChange={handleChange}
-        />
-        {errors.title && (
-          <span className="text-red-500">Title is required</span>
+        <div className="mt-4">
+          <input
+            placeholder="Post title"
+            className="w-full bg-slate-200 rounded-md focus:border-slate-900 px-2 py-1 dark:text-black"
+            type="text"
+            name="title"
+            value={formData.title}
+            onChange={handleChange}
+          />
+          {errors.title && (
+            <span className="text-red-500">Title is required</span>
+          )}
+        </div>
+
+        <div className="mt-4">
+          <textarea
+            placeholder="Write your post"
+            className="w-full border bg-slate-200 rounded-md focus:border-slate-900 px-2 py-1 h-72 resize-none dark:text-black"
+            name="body"
+            value={formData.body}
+            onChange={handleChange}
+          ></textarea>
+          {errors.body && (
+            <span className="text-red-500">Body is required</span>
+          )}
+        </div>
+
+        <div className="mt-4 flex justify-end">
+          <button
+            className="bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 rounded-md px-4 py-1 hover:bg-slate-100 transition duration-500"
+            type="submit"
+            disabled={loading}
+          >
+            {loading ? "Submitting..." : "Submit"}
+          </button>
+        </div>
+
+        {message && (
+          <p
+            className={`fixed top-20 right-5 z-50 p-4 rounded-sm animate-message ${
+              isSuccess
+                ? "bg-green-200 text-green-800"
+                : "bg-red-200 text-red-800"
+            }`}
+          >
+            {message}
+          </p>
         )}
-      </div>
-
-      <div className="mt-4">
-        <textarea
-          placeholder="Write your post"
-          className="w-full border bg-slate-200 rounded-md focus:border-slate-900 px-2 py-1 h-72 resize-none dark:text-black"
-          name="body"
-          value={formData.body}
-          onChange={handleChange}
-        ></textarea>
-        {errors.body && <span className="text-red-500">Body is required</span>}
-      </div>
-
-      <div className="mt-4 flex justify-end">
-        <button
-          className="bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 rounded-md px-4 py-1 hover:bg-slate-100 transition duration-500"
-          type="submit"
-          disabled={loading}
-        >
-          {loading ? "Submitting..." : "Submit"}
-        </button>
-      </div>
-
-      {message && (
-        <p
-          className={`absolute z-50 top-20 right-5 w-fit p-4 rounded-sm animate-message ${
-            isSuccess
-              ? "bg-green-200 text-green-800"
-              : "bg-red-200 text-red-800"
-          }`}
-        >
-          {message}
-        </p>
-      )}
-    </form>
+      </form>
+    </div>
   );
 };
 
