@@ -1,12 +1,17 @@
 import React from "react";
 
-const Page = async ({ params }: { params: { blog: string } }) => {
+const BlogPage = async ({ params }: { params: { blog: string } }) => {
   try {
     const res = await fetch(
       `https://jsonplaceholder.typicode.com/posts/${params.blog}`
     );
+
     if (!res.ok) {
-      throw new Error("Failed to fetch post");
+      if (res.status === 404) {
+        throw new Error("Blog post not found");
+      } else {
+        throw new Error("Failed to fetch blog post");
+      }
     }
 
     const blog = await res.json();
@@ -23,11 +28,11 @@ const Page = async ({ params }: { params: { blog: string } }) => {
       <div className="container py-8 px-4">
         <h1 className="text-4xl font-bold max-w-2xl">Error</h1>
         <p className="leading-relaxed mt-10 text-lg max-w-2xl">
-          Failed to fetch blog post. Please try again later.
+          {error instanceof Error ? error.message : "An unknown error occurred"}
         </p>
       </div>
     );
   }
 };
 
-export default Page;
+export default BlogPage;
