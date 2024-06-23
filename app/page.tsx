@@ -7,22 +7,26 @@ interface Post {
   body: string;
 }
 
-const fetchPosts = async (): Promise<Post[]> => {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
-  if (!res.ok) {
-    throw new Error("Failed to fetch posts");
-  }
-  return res.json();
-};
-
-const Home = async () => {
-  const posts = await fetchPosts();
-
+const Home = ({ posts }: { posts: Post[] }) => {
   return (
-    <main className="container max-sm:w-[95%] py-8 flex justify-center items-center ">
+    <main className="container max-w-[95%] py-8 flex justify-center items-center">
       <BlogList posts={posts} />
     </main>
   );
+};
+
+export const getServerSideProps = async () => {
+  try {
+    const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+    if (!res.ok) {
+      throw new Error("Failed to fetch posts");
+    }
+    const posts: Post[] = await res.json();
+    return { props: { posts } };
+  } catch (error) {
+    console.error("Error fetching posts:", error);
+    return { props: { posts: [] } }; // Return empty array or handle error as needed
+  }
 };
 
 export default Home;
