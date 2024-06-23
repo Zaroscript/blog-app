@@ -97,7 +97,7 @@ const Form: React.FC = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="mt-12 sm:mt-28 flex flex-col rounded-lg p-4 w-2/3 mx-auto border border-slate-200 max-sm:w-[90%]"
+      className="mt-24 sm:mt-28 flex flex-col rounded-lg p-4 w-2/3 mx-auto border border-slate-200 max-sm:w-[90%]"
     >
       <h2 className="font-bold text-2xl md:text-4xl text-center">Create a new post</h2>
 
