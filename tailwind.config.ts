@@ -19,12 +19,17 @@ const config: Config = {
       },
       animation: {
         message: "message 1s ease-in",
+        appear: "appear 0.5s ease-in-out"
       },
       keyframes: {
         message: {
           "0%": { transform: "translateX(300px)" },
           "100%": { transform: "translateX(0)" },
         },
+        appear: {
+          "0%": {opacity: "0"},
+          "100%": {opacity: "1"}
+        }
       },
     },
   },
