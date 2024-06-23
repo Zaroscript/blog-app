@@ -29,7 +29,7 @@ const NavBar = () => {
   }, [isDarkMode]);
 
   return (
-    <nav className="container fixed top-0 left-1/2 -translate-x-1/2 z-40 bg-white dark:bg-slate-900 py-4 px-8 flex justify-between items-center border-b border-slate-900 dark:border-slate-200 max-sm:relative">
+    <nav className="container fixed top-0 left-1/2 -translate-x-1/2 z-40 bg-white dark:bg-slate-900 py-4 px-8 flex justify-between items-center border-b border-slate-900 dark:border-slate-200">
       <Link href="/">
         <h2 className="text-2xl font-bold">/Blog</h2>
       </Link>
