@@ -97,7 +97,7 @@ const Form: React.FC = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="mt-4 flex flex-col rounded-lg p-4 w-2/3 mx-auto border border-slate-200 max-sm:w-[90%]"
+      className="mt-12 sm:mt-28 flex flex-col rounded-lg p-4 w-2/3 mx-auto border border-slate-200 max-sm:w-[90%]"
     >
       <h2 className="font-bold text-2xl md:text-4xl text-center">Create a new post</h2>
 
@@ -138,7 +138,7 @@ const Form: React.FC = () => {
 
       {message && (
         <p
-          className={`absolute top-4 right-10 w-fit p-4 rounded-sm animate-message ${
+          className={`absolute z-50 top-4 right-10 w-fit p-4 rounded-sm animate-message ${
             isSuccess
               ? "bg-green-200 text-green-800"
               : "bg-red-200 text-red-800"

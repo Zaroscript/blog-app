@@ -14,7 +14,7 @@ const Home = async () => {
   const posts = await fetchPosts();
 
   return (
-    <main className="container max-sm:w-[95%] py-8 flex justify-center items-center">
+    <main className="container max-sm:w-[95%] py-32 flex justify-center items-center">
       <BlogList posts={posts} />
     </main>
   );
