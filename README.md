@@ -35,24 +35,4 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-blog-app/
-├── components/
-│   ├── NavBar.tsx
-│   ├── Blog.tsx
-│   ├── BlogList.tsx
-│   ├── Form.tsx
-│   ├── ScrollTop.tsx
-├── app/
-│   ├── globals.css
-│   ├── layout.tsx
-│   ├── loading.tsx
-│   └── page.tsx
-├── .eslintec.json
-├── .gitignore
-├── nex-env.d.ts
-├── package.json
-├── package-lock.json
-├── postcss.config.js
-├── tailwind.config.js
-└── README.md
-└── tsconfig.son
+

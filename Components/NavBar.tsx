@@ -29,7 +29,7 @@ const NavBar = () => {
   }, [isDarkMode]);
 
   return (
-    <nav className="container py-4 px-8 flex justify-between items-center border-b border-slate-900 dark:border-slate-200 max-sm:relative overflow-x-hidden">
+    <nav className="container py-4 px-8 flex justify-between items-center border-b border-slate-900 dark:border-slate-200 max-sm:relative">
       <Link href="/">
         <h2 className="text-2xl font-bold">/Blog</h2>
       </Link>
@@ -37,18 +37,18 @@ const NavBar = () => {
       <div className="max-sm:absolute max-sm:z-50  max-sm:top-full max-sm:right-4 max-sm:w-44 flex max-sm:flex-col gap-2 sm:gap-8">
         <Link
           href="/"
-          className={`max-sm:bg-slate-200 max-sm:dark:bg-slate-900 max-sm:dark:hover:bg-slate-800 max-sm:w-full max-sm:p-4 max-sm:text-center max-sm:block shadow-md max-sm:hover:bg-slate-100 transition duration-500 
-            max-sm:rounded-sm text-lg sm:underline-effect sm:shadow-none sm:p-0 sm:translate-x-0
-            ${!isOpen && "translate-x-60"}`}
+          className={`max-sm:bg-slate-200 max-sm:dark:bg-slate-900 max-sm:dark:hover:bg-slate-800 max-sm:w-full max-sm:p-4 max-sm:text-center max-sm:block shadow-md max-sm:hover:bg-slate-100 transition-all duration-500 
+            max-sm:rounded-sm text-lg sm:underline-effect sm:shadow-none sm:p-0 sm:ml-0 sm:opacity-100
+            ${!isOpen && "ml-96 opacity-0"}`}
           onClick={handleNavState}
         >
           Home
         </Link>
         <Link
           href="/createPost"
-          className={`max-sm:bg-slate-200 max-sm:dark:bg-slate-900 max-sm:dark:hover:bg-slate-800 max-sm:w-full max-sm:p-4 max-sm:text-center max-sm:block shadow-md max-sm:hover:bg-slate-100 transition duration-500 
-            max-sm:rounded-sm text-lg sm:underline-effect sm:shadow-none sm:p-0 sm:translate-x-0
-            ${!isOpen && "translate-x-60"}`}
+          className={`max-sm:bg-slate-200 max-sm:dark:bg-slate-900 max-sm:dark:hover:bg-slate-800 max-sm:w-full max-sm:p-4 max-sm:text-center max-sm:block shadow-md max-sm:hover:bg-slate-100 transition-all duration-500 delay-150
+            max-sm:rounded-sm text-lg sm:underline-effect sm:shadow-none sm:p-0 sm:ml-0 sm:opacity-100
+            ${!isOpen && "ml-96 opacity-0"}`}
           onClick={handleNavState}
         >
           CreatePost

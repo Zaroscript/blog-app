@@ -4,8 +4,11 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+  }
   body {
-    @apply bg-white text-black dark:bg-slate-900 dark:text-white transition relative;
+    overflow-x: hidden !important;
+    @apply bg-white text-black dark:bg-slate-900 dark:text-white transition;
   }
 }
 
@@ -13,6 +16,8 @@
   .fullHeightMinusNav {
     height: calc(100vh - 65px);
   }
+
+
 }
 
 @layer components {
