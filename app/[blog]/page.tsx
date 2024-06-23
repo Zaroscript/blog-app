@@ -17,7 +17,7 @@ const BlogPage = async ({ params }: { params: { blog: string } }) => {
     const blog = await res.json();
 
     return (
-      <div className="container mt-12 sm:mt-28 px-4">
+      <div className="container mt-24 sm:mt-28 px-4">
         <h1 className="text-4xl font-bold max-w-2xl">{blog.title}</h1>
         <p className="leading-relaxed mt-10 text-lg max-w-2xl">{blog.body}</p>
       </div>

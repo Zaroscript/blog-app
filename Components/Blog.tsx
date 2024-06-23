@@ -26,7 +26,7 @@ const Blog: React.FC<BlogProps> = ({ id, title, body }) => {
 
         <Link
           href={`/${id}`}
-          className="block bg-slate-300 dark:bg-black py-3 px-5 leading-4 font-bold uppercase text-center transition duration-500 hover:bg-slate-200 dark:hover:bg-slate-600"
+          className="block bg-slate-300 dark:bg-black py-3 px-5 leading-4 font-bold uppercase text-center transition duration-500 hover:bg-slate-200 dark:hover:bg-slate-800"
         >
           Read Blog
         </Link>
